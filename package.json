@@ -1,0 +1,21 @@
+{
+  "name": "vue-autosize",
+  "version": "0.1.0",
+  "description": "textarea autosize for vue directive",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "textarea",
+    "autosize",
+    "vue",
+    "directive"
+  ],
+  "author": "mage3k",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "autosize": "^3.0.14",
+    "vue": "^1.0.11"
+  }
+}
