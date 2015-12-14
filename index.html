@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="A Vue directive for autosize">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Vue autosize</title>
+  <style>
+    body {
+      font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+    }
+    #app {
+      max-width: 400px;
+      margin: 0 auto;
+      margin-top: 150px;
+    }
+    h1 {
+      font-weight: 600;
+      color: #2c3e50;
+      text-align: center;
+    }
+    textarea {
+      width: 100%;
+      outline: none;
+      padding: 6px 8px;
+      border-color: #ddd;
+    }
+    textarea:focus {
+      border-color: #999;
+    }
+    .fork {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block;
+      width: 149px;
+      height: 149px;
+      background: url('./assets/images/github.png');
+      text-indent: -9999px;
+    }
+    button {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 6px 8px;
+      outline: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #f6f5f4;
+      border-color: #999;
+    }
+  </style>
+</head>
+<body>
+<a class="fork" href="http://github.com/mage3k/vue-autosize">Fork me on GitHub</a>
+<div id="app">
+  <h1>Vue autosize</h1>
+  <textarea v-autosize="value">{{value}}</textarea>
+  <button type="button" @click="reset">generate lorem ipsum text</button>
+</div>
+<script src="assets/javascripts/app.js"></script>
+</body>
+</html>
