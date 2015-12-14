@@ -54,7 +54,7 @@
 	var Vue = __webpack_require__(2)
 	var autosize = __webpack_require__(4)
 	var loremIpsum = __webpack_require__(6)
-	Vue.directive('autosize', autosize)
+	Vue.use(autosize)
 	
 	var App = new Vue({
 	  replace: false,
@@ -9577,19 +9577,23 @@
 
 	var autosize = __webpack_require__(5)
 	
-	module.exports = {
-	  bind: function() {
-	    autosize(this.el)
-	  },
-	  update: function(value) {
-	    this.el.value = value
-	    autosize.update(this.el)
-	  },
-	  unbind: function() {
-	    autosize.destroy(this.el)
-	  }
+	exports.install = function(Vue, options) {
+	
+	  Vue.directive('autosize', {
+	    bind: function() {
+	      autosize(this.el)
+	    },
+	
+	    update: function(value) {
+	      this.el.value = value
+	      autosize.update(this.el)
+	    },
+	
+	    unbind: function() {
+	      autosize.destroy(this.el)
+	    }
+	  })
 	}
-
 
 /***/ },
 /* 5 */

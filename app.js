@@ -1,7 +1,7 @@
 var Vue = require('vue')
-var autosize = require('./src/autosize')
+var autosize = require('./index')
 var loremIpsum = require('lorem-ipsum')
-Vue.directive('autosize', autosize)
+Vue.use(autosize)
 
 var App = new Vue({
   replace: false,
