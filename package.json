@@ -1,8 +1,12 @@
 {
   "name": "vue-autosize",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A simple Vue directive for autosize",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mage3k/vue-autosize.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,8 +16,8 @@
     "vue",
     "directive"
   ],
-  "author": "mage3k",
-  "license": "UNLICENSED",
+  "author": "mage3k <loper.tt@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "autosize": "^3.0.14",
     "vue": "^1.0.11"
