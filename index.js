@@ -1,24 +1,28 @@
-var autosize = require('autosize')
+// autosize will enable autosizing of textareas with the autosize plugin
+import autosize from 'autosize';
 
-exports.install = function(Vue) {
-  Vue.directive('autosize', {
-    bind: function() {
-      var self = this
-      Vue.nextTick(function() {
-        autosize(self.el)
-      })
-    },
+const AutosizePlugin = {
+	install: function(Vue, options) {
 
-    update: function(value) {
-      var self = this
-      Vue.nextTick(function() {
-        self.el.value = value
-        autosize.update(self.el)
-      })
-    },
+		Vue.directive('autosize', {
+			// add autosize functionality for textareas (requires the autosize library)
+			bind(el) {
+				Vue.nextTick(function() {
+					autosize(el);
+				});
 
-    unbind: function() {
-      autosize.destroy(this.el)
-    }
-  })
-}
+			},
+			update(el) {
+				Vue.nextTick(function() {
+					autosize.update(el);
+				});
+			},
+			unbind(el) {
+				autosize.destroy(el);
+			}
+		});
+
+	}
+};
+
+export default AutosizePlugin;
