@@ -19,14 +19,20 @@
       color: #2c3e50;
       text-align: center;
     }
-    textarea {
+    textarea, input[type="text"] {
       width: 100%;
       outline: none;
       padding: 6px 8px;
       border-color: #ddd;
+      box-sizing: border-box;
     }
-    textarea:focus {
+    textarea:focus,
+    input[type="text"]:focus {
       border-color: #999;
+    }
+    input[type="text"] {
+      border-width: 1px;
+      border-style: solid;
     }
     .fork {
       position: absolute;
@@ -49,15 +55,40 @@
       background-color: #f6f5f4;
       border-color: #999;
     }
+    .tabs {
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+    }
+    .tabs .tab-button {
+      width: 50%;
+      border: none;
+    }
+    .tabs .tab-button.active {
+      background: #f6f5f4;
+    }
+    .tabs .tab-button:nth-child(2n) {
+      margin-left: -1px; 
+    }
   </style>
 </head>
 <body>
 <a class="fork" href="http://github.com/mage3k/vue-autosize">Fork me on GitHub</a>
 <div id="app">
   <h1>Vue autosize</h1>
-  <textarea v-autosize="value">{{value}}</textarea>
-  <button type="button" @click="reset">generate lorem ipsum text</button>
+  <div class="tabs">
+    <button class="tab-button" :class="{active: tab == 'textarea'}" @click="tab = 'textarea'">TEXTAREA</button><button class="tab-button" :class="{active: tab == 'input'}" @click="tab = 'input'">INPUT</button>
+  </div>
+  <div class="tab-content">
+    <div v-show="tab == 'textarea'">
+      <textarea v-autosize="value">{{value}}</textarea>
+      <button type="button" @click="reset">generate lorem ipsum text</button>
+    </div>
+    <div v-show="tab == 'input'">
+      <input type="text" v-autosize="value" style="min-width: 50px; max-width: 400px;"/>
+    </div>
+  </div>
 </div>
+<script src="https://unpkg.com/vue@2.2.6/dist/vue.js"></script>
 <script src="assets/javascripts/app.js"></script>
 </body>
 </html>

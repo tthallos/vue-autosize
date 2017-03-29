@@ -16,7 +16,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "autosize": "^3.0.14",
-    "lorem-ipsum": "^1.0.3",
-    "vue": "^1.0.11"
+    "autosize-input": "^0.4.0",
+    "lorem-ipsum": "^1.0.3"
   }
 }
