@@ -16,8 +16,6 @@ exports.install = function(Vue) {
       var tagName = el.tagName
       if (tagName == 'TEXTAREA') {
         autosize.update(el)
-      } else if (tagName == 'INPUT' && el.type == 'text') {
-        autoSizeInput(el)
       }
     },
 
