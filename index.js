@@ -4,19 +4,23 @@ var autoSizeInput = require('autosize-input')
 exports.install = function(Vue) {
   Vue.directive('autosize', {
     bind: function(el, binding) {
-      var tagName = el.tagName
-      if (tagName == 'TEXTAREA') {
-        autosize(el)
-      } else if (tagName == 'INPUT' && el.type == 'text') {
-        autoSizeInput(el)
-      }
+      Vue.nextTick(function() {
+        var tagName = el.tagName
+        if (tagName == 'TEXTAREA') {
+          autosize(el)
+        } else if (tagName == 'INPUT' && el.type == 'text') {
+          autoSizeInput(el)
+        }
+      })
     },
 
     componentUpdated: function(el, binding, vnode) {
-      var tagName = el.tagName
-      if (tagName == 'TEXTAREA') {
-        autosize.update(el)
-      }
+      Vue.nextTick(function() {
+        var tagName = el.tagName
+        if (tagName == 'TEXTAREA') {
+          autosize.update(el)
+        }
+      })
     },
 
     unbind: function(el) {
