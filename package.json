@@ -13,7 +13,7 @@
     "directive"
   ],
   "author": "mage3k",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "dependencies": {
     "autosize": "^3.0.14",
     "autosize-input": "^0.4.0",
