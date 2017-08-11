@@ -1,8 +1,8 @@
 {
   "name": "vue-autosize",
-  "version": "1.0",
+  "version": "1.0.1",
   "description": "autosize for vue directive",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,8 +15,7 @@
   "author": "mage3k",
   "license": "MIT",
   "dependencies": {
-    "autosize": "^3.0.14",
-    "autosize-input": "^0.4.0",
-    "lorem-ipsum": "^1.0.3"
+    "autosize": "^4.0.0",
+    "autosize-input": "^0.4.0"
   }
 }
