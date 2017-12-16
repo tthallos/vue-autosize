@@ -1,6 +1,6 @@
 {
   "name": "vue-autosize",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "autosize for vue directive",
   "main": "src/index.js",
   "scripts": {
